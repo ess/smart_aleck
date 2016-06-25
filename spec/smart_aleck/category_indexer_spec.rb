@@ -34,9 +34,13 @@ RSpec.describe SmartAleck::CategoryIndexer do
   end
 
   describe '#category_hash' do
-    it 'is the OR of the provided category ids' do
+    it 'is a string' do
+      expect(indexer.category_hash).to be_a(String)
+    end
+
+    it 'is the Base58 hash of the OR of the provided category ids' do
       expect(indexer.category_hash).
-        to eql(2 ** cat1.id.to_i | 2 ** cat2.id.to_i)
+        to eql(Base58.encode(2 ** cat1.id.to_i | 2 ** cat2.id.to_i))
     end
   end
 end
