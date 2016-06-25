@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.2"
   spec.add_development_dependency "faker", "~> 1.4"
   spec.add_runtime_dependency "optionally"
+  spec.add_runtime_dependency "base58", "~> 0.1"
 end
